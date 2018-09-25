@@ -10,8 +10,9 @@ class SearchBar extends Component {
         
         this.state = { term: '' };
         this.onInputChange=this.onInputChange.bind(this);
-        //note: binds the 'this' reference inside the callback function onInputChange 
-        //to the SearchBar object so when the callback is called, 'this' has the 
+        this.onFormSubmit=this.onFormSubmit.bind(this);
+        //note: binds the 'this' reference inside the callback function to 
+        //the SearchBar object so when the callback is called, 'this' has the 
         //correct context. can also use onInputChange = (event) =>{}
     }
     
@@ -33,6 +34,7 @@ class SearchBar extends Component {
                 <input 
                     placeholder="Get a five-day forecast in your favorite cities"
                     className="form-control"
+                    //note: the following makes SearchBar a controlled component.
                     value={this.state.term}
                     onChange={this.onInputChange}
                 />
