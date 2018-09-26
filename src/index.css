@@ -4,6 +4,10 @@ body {
   font-family: sans-serif;
 }
 
+.container{
+  margin: 10px;
+}
+
 .search-bar{
     margin: 20px;
 }
@@ -12,11 +16,16 @@ body {
   margin-right: 5px;
 }
 
-td,th{
+td, th{
   vertical-align: middle !important;
   text-align: center !important;
 }
 
 ./input-group {
   margin:20px 0px;
+}
+
+td:first-of-type > div {
+  height: 200px;
+  width: 250px;
 }
