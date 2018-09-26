@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Sparklines, SparklinesLine } from "react-sparklines";
+//import { Sparklines, SparklinesLine } from "react-sparklines";
+import Chart from '../components/chart';
 
 class WeatherList extends Component {
     
@@ -12,46 +13,19 @@ class WeatherList extends Component {
                     //console.log(pressure)
                     const humidity = cityData.list.map(function humidity (state) {return state.main.humidity});
                     //console.log(humidity)
-
-                    //temp values for atlanta = 299.22, 297.67, 295.22 etc
                     
                     return(
                         <tr key={ name }>
                             <td>{ name }</td>
                             <td>
-                            <div>
-                            <Sparklines
-                                svgHeight={120}
-                                svgWidth={180}
-                                data={temp}>
-                                <SparklinesLine color="red"/>
-                            </Sparklines>
-                            </div>
+                                <Chart data={temp} color="red" units="Kelvin" />
                             </td>
-                            
                             <td>
-                            <div>
-                            <Sparklines
-                                svgHeight={120}
-                                svgWidth={180}
-                                data={pressure}>
-                                <SparklinesLine color="blue"/>
-                            </Sparklines>
-                            </div>
+                                <Chart data={pressure} color="blue" units="hPa" />
                             </td>
-                            
                             <td>
-                            <div>
-                            <Sparklines
-                                svgHeight={120}
-                                svgWidth={180}
-                                data={humidity}>
-                                <SparklinesLine color="green"/>
-                            </Sparklines>
-                            </div>
+                                <Chart data={humidity} color="green" units="%" />
                             </td>
-
-                            
                         </tr>
                     )
                 }
