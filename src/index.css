@@ -4,24 +4,24 @@ body {
   font-family: sans-serif;
 }
 
-.container{
-  margin: 10px;
+.containers {
+  margin: 20px;
 }
 
-.search-bar{
+.search-bar {
     margin: 20px;
 }
 
-.search-bar input{
+.search-bar input {
   margin-right: 5px;
 }
 
-td, th{
+td, th {
   vertical-align: middle !important;
   text-align: center !important;
 }
 
-./input-group {
+.input-group {
   margin:20px 0px;
 }
 
