@@ -1,8 +1,12 @@
+// Replace the four plain text table headers with four SortColumn components. All necessary information for updating how the weather data is to be sorted 
+// (including the current and new sorting schemes and orders) are passed to these components. 
+// One of such information is a function which will fire up the action creator as discussed above.
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-//import { Sparklines, SparklinesLine } from "react-sparklines";
 import Chart from '../components/chart';
 import GoogleMaps from '../components/google_maps';
+import SortColumn from '../components/sort_column';
 
 class WeatherList extends Component {
     
@@ -37,8 +41,8 @@ class WeatherList extends Component {
         return(
             <table className="table table-hover">
                 <thead>
-                    <tr>    
-                        <th>City</th>
+                    <tr>    //this is where the sorting goes
+                        <th>City</th> 
                         <th>Temperature (Kelvin)</th>
                         <th>Pressure (hPa)</th>
                         <th>Humidity (%)</th>
@@ -50,6 +54,7 @@ class WeatherList extends Component {
                 </tbody>
             </table>
             //this.props.weather.map(this.renderWeather) is an array of items returned by renderWeather
+            //store.dispatch( sort("city") )
         )
     }
 }

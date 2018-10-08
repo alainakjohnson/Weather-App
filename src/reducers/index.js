@@ -1,8 +1,12 @@
+//reducer index
+
 import {combineReducers} from 'redux';
 import WeatherReducer from './reducer_weather';
+import SortReducer from './sort_reducer';
 
 const rootReducer = combineReducers({
-    weather: WeatherReducer
+    weather: WeatherReducer,
+    sort: SortReducer
 });
 
 export default rootReducer;
