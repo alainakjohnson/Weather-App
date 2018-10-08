@@ -1,26 +1,20 @@
-
-// Create a new Redux Reducer that is in charge of managing a new state object {sort, order}, where sort indicates the sorting scheme 
-// (city name, average temperature, average pressure, or average humidity) and order indicates the sorting direction (ascending or descending).
-
-// Upon receiving an action by the type of say SORT_WEATHER, it simply updates the state accordingly.
-import { Sorter } from "../actions/index.js";
+import { SORT_WEATHER } from "../actions/index.js";
+import SortColumn from '../components/sort_column';
 
 const state = {
-    sort: "sort_by_city",
-    order: "order_ascending"
+    sort: "SORT_BY_CITY",
+    order: "ORDER_ASCENDING"
 };
 
-export const sort = (state = "sort_by_city", action) => {
+export default function(state, action){
     switch (action.type){
-        case Sorter:
-            return 
-                sort: action.sortBy;
-                order: action.orderBy;
-        default : 
-            return state
+        case SORT_WEATHER:
+            return {
+                sort: state.action.sortBy,
+                order: state.action.orderBy
+            }
     }
+        return state;
 }
-console.log( sort(state, action) ) 
 
-export default sort;
-
+//complete?

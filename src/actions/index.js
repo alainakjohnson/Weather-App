@@ -6,15 +6,7 @@ const API_KEY = '79ba55c402c38a4b6d534ab0a35e44ac';
 const ROOT_URL = `https://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`;
 
 export const FETCH_WEATHER = 'FETCH_WEATHER';
-export const SORTER = 'SORTER';
-
-//sorter
-export function sorter(sort){
-    return { 
-        type: SORTER, 
-        payload: sort 
-    };
-}
+export const SORT_WEATHER = 'SORT_WEATHER';
 
 export function fetchWeather(city){
     const url = `${ROOT_URL}&q=${city},us`;
@@ -29,3 +21,12 @@ export function fetchWeather(city){
         payload: request
     }
 }
+
+export function sortWeather(sort, order){
+    return { 
+        type: SORT_WEATHER, 
+        payload: { sort, order } 
+    }
+}
+
+//complete?

@@ -2,13 +2,28 @@
 // (including the current and new sorting schemes and orders) are passed to these components. 
 // One of such information is a function which will fire up the action creator as discussed above.
 
+//basic plan:
+//make a function that actually takes in the type of sorting and order then perform the sorting action
+//and i guess implement the sort column components
+// so basically a column looks like:
+//  - just has the name and arrow physically
+//  - the keyword for the reducer?
+//  - the keywords for the sorting and order (the order is just going to be the arrow, maybe true/false)
+//  - "function which will fire up the action creator" so the function is called
+//should maybe write the sort column first
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import Chart from '../components/chart';
 import GoogleMaps from '../components/google_maps';
 import SortColumn from '../components/sort_column';
+import { SORT_WEATHER } from "../actions/index.js";
 
 class WeatherList extends Component {
+    
+    //const sortFunction = function (sortFunction) { this.props.sortWeather(sort, order) };
+    
     
     renderWeather(cityData){
                     const name = cityData.city.name;
@@ -37,12 +52,12 @@ class WeatherList extends Component {
                 }
     
     render(){
-        
         return(
             <table className="table table-hover">
                 <thead>
-                    <tr>    //this is where the sorting goes
-                        <th>City</th> 
+                    <tr>
+                    //this is where the sortcolumn goes also this is where i will send in sort and order
+                        <th>City</th>
                         <th>Temperature (Kelvin)</th>
                         <th>Pressure (hPa)</th>
                         <th>Humidity (%)</th>
@@ -54,7 +69,6 @@ class WeatherList extends Component {
                 </tbody>
             </table>
             //this.props.weather.map(this.renderWeather) is an array of items returned by renderWeather
-            //store.dispatch( sort("city") )
         )
     }
 }
@@ -69,4 +83,8 @@ function mapStateToProps({ weather }){
     return { weather };
 }
 
-export default connect(mapStateToProps)(WeatherList);
+function mapDispatchtoProps({ dispatch }){
+    return bindActionCreators({ sortWeather: sortWeather }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchtoProps)(WeatherList);
