@@ -8,13 +8,13 @@ const state = {
 
 export default function(state, action){
     switch (action.type){
-        case SORT_WEATHER:
+        case "SORT_WEATHER":
             return {
-                sort: state.action.sortBy,
-                order: state.action.orderBy
+                sort: action.payload.sort,
+                order: action.payload.order
             }
     }
-        return state;
+        return null;
 }
 
 //complete?

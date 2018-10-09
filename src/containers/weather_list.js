@@ -18,7 +18,7 @@ import { bindActionCreators } from 'redux';
 import Chart from '../components/chart';
 import GoogleMaps from '../components/google_maps';
 import SortColumn from '../components/sort_column';
-import { SORT_WEATHER } from "../actions/index.js";
+//import { SORT_WEATHER } from "../actions/index.js";
 
 class WeatherList extends Component {
     
@@ -56,11 +56,23 @@ class WeatherList extends Component {
             <table className="table table-hover">
                 <thead>
                     <tr>
-                    //this is where the sortcolumn goes also this is where i will send in sort and order
-                        <th>City</th>
-                        <th>Temperature (Kelvin)</th>
-                        <th>Pressure (hPa)</th>
-                        <th>Humidity (%)</th>
+                        <th><SortColumn 
+                        title="City"
+                        // keyword="SORT_BY_CITY",
+                        // sort=
+                        // order=
+                        // sortFunction()
+                        />
+                        </th>
+                        <th><SortColumn 
+                        title="Temperature (Kelvin)"
+                        /></th>
+                        <th><SortColumn 
+                        title="Pressure (hPa)"
+                        /></th>
+                        <th><SortColumn 
+                        title="Humidity (%)"
+                        /></th>
                     </tr>
                 </thead>
                 
@@ -83,8 +95,9 @@ function mapStateToProps({ weather }){
     return { weather };
 }
 
-function mapDispatchtoProps({ dispatch }){
-    return bindActionCreators({ sortWeather: sortWeather }, dispatch);
-}
+// function mapDispatchtoProps({ dispatch }){
+//     return bindActionCreators({ sortWeather: sortWeather }, dispatch);
+// }
 
-export default connect(mapStateToProps, mapDispatchtoProps)(WeatherList);
+//mapDispatchtoProps
+export default connect(mapStateToProps)(WeatherList);
