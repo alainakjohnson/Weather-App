@@ -58,10 +58,10 @@ class WeatherList extends Component {
                     <tr>
                         <th><SortColumn 
                         title="City"
-                        // keyword="SORT_BY_CITY",
-                        // sort=
-                        // order=
-                        // sortFunction()
+                        key="SORT_BY_CITY"
+                        sortBy={this.props.sortBy}
+                        orderBy={this.props.orderBy}
+                        //sortFunction()
                         />
                         </th>
                         <th><SortColumn 

@@ -10,8 +10,8 @@ export default function(state, action){
     switch (action.type){
         case "SORT_WEATHER":
             return {
-                sort: action.payload.sort,
-                order: action.payload.order
+                sort: action.payload.sortBy,
+                order: action.payload.orderBy
             }
     }
         return null;

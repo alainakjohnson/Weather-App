@@ -29,11 +29,4 @@ export function sortWeather(sort, order){
     }
 }
 
-export function selectCategory(title){
-    return {
-        type: 'SELECTED_CATEGORY',
-        payload: title
-    }
-}
-
 //complete?
