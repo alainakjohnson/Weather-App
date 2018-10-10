@@ -4,16 +4,18 @@
 import React, { Component } from 'react';
 
 
+const invert = {
+    asc: "desc",
+    desc: "asc"
+};
+
 class SortColumn extends Component{
 
 // this is wrong
 
-   columnSelect = () => {
-    this.setState(state => ({
-        sort: this.props.sort,
-        order: this.props.order
-        }));
-        this.props.columnSort(this.props.sort, this.props.order);
+   columnSelect = (columnName) => {
+        var order = this.props.order === "asc" ? invert[this.props.order] : "asc" 
+        this.props.columnSort(this.props.keyword, order);
     };
     
 
