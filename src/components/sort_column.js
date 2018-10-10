@@ -7,52 +7,26 @@
 import React, { Component } from 'react';
 
 class SortColumn extends Component{
-    //function ("categorySelect" or so) to "select" the title and underline it and then sort by 
-    //- so, when title is selected, it will be underlined and the sortWeather action is called
-    //function to switch the arrows and then order in the correct direction
-    //- nested maybe?? since you pick the category then direction
-    //-if up, ascending, if down, descending
-    //-by default, it orders it ascending
-   constructor(props) {
-      super(props);
-      this.state = {
-         title: this.props.title,
-         key: this.props.key,
-         sort: this.props.sort,
-         order: this.props.order
-      }
-      this.categorySelect = this.categorySelect.bind(this);
-   }
-   
-    categorySelect() {
-        this.setState({
-            title: <u>{ this.props.title }</u>,
-            key: this.props.key,
-            sort: this.props.sort,
-            order: this.props.order
-        });
+
+   columnSelect = columnName => {
+                                    console.log(this.props)
+    this.setState(state => ({
+        order: "ORDER_DESCENDING"
+        }));
+        this.props.columnSort(this.props.keyword, this.props.order);
+    };
     
-    }
 
     render() {
-        var selectedCategory = this.props.sort === this.props.key;
-        var arrow;
-            if (selectedCategory===true){
-                if(this.props.order === "ORDER_ASCENDING"){
-                    arrow = <span className="oi oi-chevron-top" aria-hidden="true" />
-                }
-                else{
-                    arrow = <span className="oi oi-chevron-bottom" aria-hidden="true" />
-                }
-                
-            }
-        ///need to fix the thing where it only underlines selected
-        //need to make arrow appear on selected ones
-        
-        return <div id="newHeading"
-                onClick={ this.categorySelect }>
-                    {this.state.title} 
-                    {arrow}
+        return <div onClick={() => this.columnSelect(this.props.title)}>
+                    
+                    <span>{this.props.title}</span>
+                    {this.props.keyword === this.props.sort ? (
+                        this.props.order === "ORDER_ASCENDING" 
+                            ? (<span className="oi oi-chevron-top" aria-hidden="true" />)
+                            : (<span className="oi oi-chevron-bottom" aria-hidden="true" />)
+                        ) : null
+                    }
                 </div>
     }
 }

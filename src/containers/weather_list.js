@@ -9,7 +9,8 @@ import Chart from '../components/chart';
 import GoogleMaps from '../components/google_maps';
 import SortColumn from '../components/sort_column';
 import { sortWeather } from "../actions/index.js";
-import _ from 'lodash';
+import orderBy from 'lodash';
+
 
 class WeatherList extends Component {
     
@@ -49,8 +50,8 @@ class WeatherList extends Component {
 //should maybe write the sort column first
 
     
-        sorter (sort, order){
-        return this.props.sortWeather(sort, order);
+    columnSort = (sort, order) => {
+    this.props.sortWeather(sort, order)
     }
     
     render(){
@@ -59,35 +60,35 @@ class WeatherList extends Component {
                 <thead>
                     <tr>
                         <th><SortColumn 
-                        title="City"
-                        key="city"
-                        sort={this.props.sort}
-                        order={this.props.order}
-                        sorter = {this.sorter}
+                        columnSort = {this.columnSort}
+                        keyword = "city"
+                        title = "City"
+                        sort = {this.props.sort}
+                        order = {this.props.order}
                         />
                         </th>
                         <th><SortColumn 
-                        title="Temperature (Kelvin)"
-                        key="averageTemp"
-                        sort={this.props.sort}
-                        order={this.props.order}
-                        sorter = {this.sorter}
+                        columnSort = {this.columnSort}
+                        keyword = "averageTemp"
+                        title = "Temperature (Kelvin)"
+                        sort = {this.props.sort}
+                        order = {this.props.order}
                         />
                         </th>
                         <th><SortColumn 
-                        title="Pressure (hPa)"
-                         key="averagePressure"
-                        sort={this.props.sort}
-                        order={this.props.order}
-                        sorter = {this.sorter}
+                        columnSort = {this.columnSort}
+                        keyword = "averagePressure"
+                        title = "Pressure (hPa)"
+                        sort = {this.props.sort}
+                        order = {this.props.order}
                         />
                         </th>
                         <th><SortColumn 
-                        title="Humidity (%)"
-                        key="averageHumidity"
-                        sort={this.props.sort}
-                        order={this.props.order}
-                        sorter = {this.sorter}
+                        columnSort = {this.columnSort}
+                        keyword = "averageHumidity"
+                        title = "Humidity (%)"
+                        sort = {this.props.sort}
+                        order = {this.props.order}
                         />
                         </th>
                     </tr>
