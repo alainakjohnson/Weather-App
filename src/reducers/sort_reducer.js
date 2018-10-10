@@ -1,11 +1,9 @@
-import { SORT_WEATHER } from "../actions/index.js";
-
-const state = {
-    sort: "city",
-    order: "ORDER_ASCENDING"
+const defaultState = {
+    sort: "sort_by_city",
+    order: "asc"
 };
 
-export default function(state, action){
+export default function (state = defaultState, action){
     switch (action.type){
         case "SORT_WEATHER":
             return {
@@ -13,7 +11,5 @@ export default function(state, action){
                 order: action.payload.order
             }
     }
-        return null;
+        return defaultState;
 }
-
-//complete?

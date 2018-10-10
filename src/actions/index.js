@@ -28,5 +28,3 @@ export function sortWeather(sort, order){
         payload: { sort, order } 
     }
 }
-
-//complete?
