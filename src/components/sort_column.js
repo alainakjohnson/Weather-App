@@ -6,21 +6,20 @@ import React, { Component } from 'react';
 
 class SortColumn extends Component{
 
+// this is wrong
+
    columnSelect = () => {
     this.setState(state => ({
         sort: this.props.sort,
         order: this.props.order
         }));
-        this.props.columnSort(this.props.title, this.props.order);
-        
-        console.log("in the sort column: ")
-        console.log(this.props)
+        this.props.columnSort(this.props.sort, this.props.order);
     };
     
 
     render() {
         //need to add underline and make the arrow flip
-        return <div onClick={() => this.columnSelect(this.props.title)}>
+        return <div onClick={() => this.columnSelect(this.props.title) || console.log(this.props)} >
                     <span>{this.props.title}</span>
                     {this.props.keyword === this.props.sort ? (
                         this.props.order === "asc" 
@@ -29,6 +28,8 @@ class SortColumn extends Component{
                         ) : null
                     }
                 </div>
+                
+                
     }
 }
 

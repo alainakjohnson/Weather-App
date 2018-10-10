@@ -56,7 +56,7 @@ class WeatherList extends Component {
                         columnSort = {this.columnSort}
                         keyword = "sort_by_city"
                         title = "City"
-                        sortingMethod = "city" //... idk
+                        sortingkey = "city"
                         sort = {this.props.sort}
                         order = {this.props.order}
                         />
@@ -65,7 +65,7 @@ class WeatherList extends Component {
                         columnSort = {this.columnSort}
                         keyword = "sort_by_temp"
                         title = "Temperature (Kelvin)"
-                        sortingMethod = "averageTemp"
+                        sortingkey = "averageTemp"
                         sort = {this.props.sort}
                         order = {this.props.order}
                         />
@@ -74,7 +74,7 @@ class WeatherList extends Component {
                         columnSort = {this.columnSort}
                         keyword = "sort_by_pressure"
                         title = "Pressure (hPa)"
-                        sortingMethod = "averagePressure"
+                        sortingkey = "averagePressure"
                         sort = {this.props.sort}
                         order = {this.props.order}
                         />
@@ -113,28 +113,28 @@ class WeatherList extends Component {
 function mapStateToProps({ weather, sortweather }){
     var newState = weather;
     
-    console.log("the Weather Array: ")
-        console.log(weather)
-        
-    console.log("the sortweather reducer: ")
-        console.log(sortweather)
-        
-    console.log("the sortweather reducer: ")
-        console.log(sortweather.sort)
-    
-    if (sortweather.keyword === "sort_by_city"){
+    if (sortweather.keyword === "city"){
         _.orderBy(weather, [sortweather.sort], sortweather.order);
     }
     if (sortweather.keyword === "sort_by_temp"){
-        _.orderBy(weather, [sortweather.averageTemp], sortweather.order);
+        _.orderBy(weather, [sortweather.sort], sortweather.order);
     }
     if (sortweather.keyword === "sort_by_pressure"){
-        _.orderBy(weather, [sortweather.averagePressure], sortweather.order);
+        _.orderBy(weather, [sortweather.sort], sortweather.order);
     }
     if (sortweather.keyword === "sort_by_humidity"){
-        _.orderBy(weather, [sortweather.averageHumidity], sortweather.order);
+        _.orderBy(weather, [sortweather.sort], sortweather.order);
     }
-    return{ weather: newState, sort: sortweather.sort, order: sortweather.order};
+    
+     console.log("the weather array: ")
+        console.log(weather)
+        
+    console.log("the sortweather reducer: sortweather.sort: ")
+        console.log(sortweather.sort)
+
+    console.log("the sortweather reducer: ")
+    
+    return{ weather: newState, sort: sortweather.sortingkey, order: sortweather.order};
 }
 
 function mapDispatchtoProps(dispatch){
