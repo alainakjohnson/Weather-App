@@ -2,37 +2,23 @@
 // (including the current and new sorting schemes and orders) are passed to these components. 
 // One of such information is a function which will fire up the action creator as discussed above.
 
-//basic plan:
-//make a function that actually takes in the type of sorting and order then perform the sorting action
-//and i guess implement the sort column components
-// so basically a column looks like:
-//  - just has the name and arrow physically
-//  - the keyword for the reducer?
-//  - the keywords for the sorting and order (the order is just going to be the arrow, maybe true/false)
-//  - "function which will fire up the action creator" so the function is called
-//should maybe write the sort column first
-
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Chart from '../components/chart';
 import GoogleMaps from '../components/google_maps';
 import SortColumn from '../components/sort_column';
-//import { SORT_WEATHER } from "../actions/index.js";
+import { sortWeather } from "../actions/index.js";
+import _ from 'lodash';
 
 class WeatherList extends Component {
-    
-    //const sortFunction = function (sortFunction) { this.props.sortWeather(sort, order) };
-    
     
     renderWeather(cityData){
                     const name = cityData.city.name;
                     const temp = cityData.list.map(function temp (state) {return state.main.temp});
-                    //console.log(temp)
                     const pressure = cityData.list.map(function pressure (state) {return state.main.pressure});
-                    //console.log(pressure)
                     const humidity = cityData.list.map(function humidity (state) {return state.main.humidity});
-                    //console.log(humidity)
+
                     const { lon, lat } = cityData.city.coord;
                     
                     return(
@@ -50,6 +36,22 @@ class WeatherList extends Component {
                         </tr>
                     )
                 }
+                
+                
+//basic plan:
+//make a function that actually takes in the type of sorting and order then perform the sorting action
+//and i guess implement the sort column components
+// so basically a column looks like:
+//  - just has the name and arrow physically
+//  - the keyword for the reducer?
+//  - the keywords for the sorting and order (the order is just going to be the arrow, maybe true/false)
+//  - "function which will fire up the action creator" so the function is called
+//should maybe write the sort column first
+
+    
+        sorter (sort, order){
+        return this.props.sortWeather(sort, order);
+    }
     
     render(){
         return(
@@ -58,21 +60,36 @@ class WeatherList extends Component {
                     <tr>
                         <th><SortColumn 
                         title="City"
-                        key="SORT_BY_CITY"
-                        sortBy={this.props.sortBy}
-                        orderBy={this.props.orderBy}
-                        //sortFunction()
+                        key="city"
+                        sort={this.props.sort}
+                        order={this.props.order}
+                        sorter = {this.sorter}
                         />
                         </th>
                         <th><SortColumn 
                         title="Temperature (Kelvin)"
-                        /></th>
+                        key="averageTemp"
+                        sort={this.props.sort}
+                        order={this.props.order}
+                        sorter = {this.sorter}
+                        />
+                        </th>
                         <th><SortColumn 
                         title="Pressure (hPa)"
-                        /></th>
+                         key="averagePressure"
+                        sort={this.props.sort}
+                        order={this.props.order}
+                        sorter = {this.sorter}
+                        />
+                        </th>
                         <th><SortColumn 
                         title="Humidity (%)"
-                        /></th>
+                        key="averageHumidity"
+                        sort={this.props.sort}
+                        order={this.props.order}
+                        sorter = {this.sorter}
+                        />
+                        </th>
                     </tr>
                 </thead>
                 
@@ -95,9 +112,9 @@ function mapStateToProps({ weather }){
     return { weather };
 }
 
-// function mapDispatchtoProps({ dispatch }){
-//     return bindActionCreators({ sortWeather: sortWeather }, dispatch);
-// }
+function mapDispatchtoProps({ dispatch }){
+    return bindActionCreators({ sortWeather: sortWeather }, dispatch);
+}
 
 //mapDispatchtoProps
 export default connect(mapStateToProps)(WeatherList);

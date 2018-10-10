@@ -1,8 +1,7 @@
 import { SORT_WEATHER } from "../actions/index.js";
-import SortColumn from '../components/sort_column';
 
 const state = {
-    sort: "SORT_BY_CITY",
+    sort: "city",
     order: "ORDER_ASCENDING"
 };
 
@@ -10,8 +9,8 @@ export default function(state, action){
     switch (action.type){
         case "SORT_WEATHER":
             return {
-                sort: action.payload.sortBy,
-                order: action.payload.orderBy
+                sort: action.payload.sort,
+                order: action.payload.order
             }
     }
         return null;

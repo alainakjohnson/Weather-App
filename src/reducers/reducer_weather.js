@@ -23,6 +23,9 @@ export default function(state = [], action){
             
             return [ Object.assign({}, action.payload.data, {averageTemp, averagePressure, averageHumidity}), ...state ];
         }
+        
             return state
     }
     
+    
+    //complete?

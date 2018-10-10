@@ -18,8 +18,8 @@ class SortColumn extends Component{
       this.state = {
          title: this.props.title,
          key: this.props.key,
-         sortBy: this.props.sortBy,
-         orderBy: this.props.orderBy
+         sort: this.props.sort,
+         order: this.props.order
       }
       this.categorySelect = this.categorySelect.bind(this);
    }
@@ -28,20 +28,31 @@ class SortColumn extends Component{
         this.setState({
             title: <u>{ this.props.title }</u>,
             key: this.props.key,
-            sortBy: this.props.sortBy,
-            orderBy: this.props.orderBy === "ascending"
+            sort: this.props.sort,
+            order: this.props.order
         });
     
     }
 
     render() {
-        
+        var selectedCategory = this.props.sort === this.props.key;
+        var arrow;
+            if (selectedCategory===true){
+                if(this.props.order === "ORDER_ASCENDING"){
+                    arrow = <span className="oi oi-chevron-top" aria-hidden="true" />
+                }
+                else{
+                    arrow = <span className="oi oi-chevron-bottom" aria-hidden="true" />
+                }
+                
+            }
         ///need to fix the thing where it only underlines selected
         //need to make arrow appear on selected ones
         
         return <div id="newHeading"
                 onClick={ this.categorySelect }>
-                {this.state.title}
+                    {this.state.title} 
+                    {arrow}
                 </div>
     }
 }
