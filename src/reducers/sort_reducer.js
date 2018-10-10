@@ -1,5 +1,5 @@
 const defaultState = {
-    sort: "sort_by_city",
+    sort: "sort_by_temp",
     order: "asc"
 };
 

@@ -1,4 +1,5 @@
 import { FETCH_WEATHER } from "../actions/index";
+import { SORT_WEATHER } from "../actions/index";
 import _ from 'lodash';
 
 
@@ -18,6 +19,8 @@ export default function(state = [], action){
             console.log(averageHumidity)
             
             return [ Object.assign({}, action.payload.data, {averageTemp, averagePressure, averageHumidity}), ...state ];
+        case SORT_WEATHER:
+            return state;
      }
    return state;
 }

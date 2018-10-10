@@ -6,7 +6,7 @@ import SortReducer from './sort_reducer';
 
 const rootReducer = combineReducers({
     weather: WeatherReducer,
-    sortweather: SortReducer
+    sort_weather: SortReducer
 });
 
 export default rootReducer;

@@ -112,17 +112,17 @@ function mapStateToProps({ weather, sort_weather }){
     // _.orderby(array we're sorting through, [key], order)
     var newWeather = weather;
     
-    // if (sort_weather.sort === "sort_by_city"){
-    //     newWeather = _.orderBy(weather, [weather.city.name], sort_weather.order);
-    // }
+    if (sort_weather.sort === "sort_by_city"){
+        newWeather = _.orderBy(weather, [weather.city.name], sort_weather.order);
+    }
     if (sort_weather.sort === "sort_by_temp"){
-        newWeather = _.orderBy(weather, [weather.averageTemp], sort_weather.order);
+        newWeather = _.orderBy(weather, [sort_weather.averageTemp], sort_weather.order);
     }
     if (sort_weather.sort === "sort_by_pressure"){
-        newWeather = _.orderBy(weather, [weather.averagePressure], sort_weather.order);
+        newWeather = _.orderBy(weather, [sort_weather.averagePressure], sort_weather.order);
     }
     if (sort_weather.sort === "sort_by_humidity"){
-        newWeather = _.orderBy(weather, [weather.averageHumidity], sort_weather.order);
+        newWeather = _.orderBy(weather, [sort_weather.averageHumidity], sort_weather.order);
     }
     
     console.log("IN WEATHER_LIST --------------")

@@ -14,14 +14,21 @@ class SortColumn extends Component{
 // this is wrong
 
    columnSelect = (columnName) => {
-        var order = this.props.order === "asc" ? invert[this.props.order] : "asc" 
+        var order = this.props.order === "asc" ? invert[this.props.order] : "asc" ;
         this.props.columnSort(this.props.keyword, order);
+        
+    console.log("IN SORT COLUMN --------------")
+    console.log("order:")
+    console.log(this.props.order)
+    console.log("sort:")
+    console.log(this.props.sort)
+        
     };
     
 
     render() {
         //need to add underline and make the arrow flip
-        return <div onClick={() => this.columnSelect(this.props.title) || console.log(this.props)} >
+        return <div onClick={() => this.columnSelect(this.props)} >
                     <span>{this.props.title}</span>
                     {this.props.keyword === this.props.sort ? (
                         this.props.order === "asc" 
