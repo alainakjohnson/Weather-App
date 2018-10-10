@@ -18,10 +18,9 @@ class SortColumn extends Component{
         this.props.columnSort(this.props.keyword, order);
         
     console.log("IN SORT COLUMN --------------")
-    console.log("order:")
-    console.log(this.props.order)
-    console.log("sort:")
-    console.log(this.props.sort)
+    console.log("order: ", this.props.order)
+    console.log("sort: ", this.props.sort)
+    console.log("-----------------------------")
         
     };
     

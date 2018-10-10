@@ -125,14 +125,14 @@ function mapStateToProps({ weather, sort_weather }){
         newWeather = _.orderBy(weather, [sort_weather.averageHumidity], sort_weather.order);
     }
     
-    console.log("IN WEATHER_LIST --------------")
-     console.log("the weather array: ")
-        console.log(weather)
-    console.log("sortweather: ")
-        console.log([sort_weather.averageTemp])
-    console.log("sortweather.sort: ")
-        console.log([sort_weather.sort])
+    //the problem is..................HOW DO I GET THESE VALUES.....AAAAAA
     
+    console.log("IN WEATHER_LIST --------------")
+    console.log("the weather array: ", weather)
+    console.log("sort_weather: ", sort_weather)
+    console.log("sort_weather.averageHumidity: ", [sort_weather.averageHumidity])
+    console.log("sort_weather.sort: ", [sort_weather.sort])
+    console.log("-----------------------------")
     
     return{ weather: newWeather, sort: sort_weather.sort, order: sort_weather.order};
 }
