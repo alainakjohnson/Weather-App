@@ -24,7 +24,7 @@ class SortColumn extends Component{
       this.categorySelect = this.categorySelect.bind(this);
    }
    
-    categorySelect(event) {
+    categorySelect() {
         this.setState({
             title: <u>{ this.props.title }</u>,
             key: this.props.key,
