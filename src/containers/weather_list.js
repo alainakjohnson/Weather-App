@@ -35,14 +35,9 @@ class WeatherList extends Component {
                 }
                 
                 
-
-   
 // errors: 
 // - not actually sorting. possibly the sorting is in the wrong place
 // - need to sort by the average values. so prob needs to hit that reducer
-// - the arrow and underline thing
-
-
 
  columnSort = (sort, order) => {
         this.props.sortWeather(sort, order);
@@ -59,6 +54,7 @@ class WeatherList extends Component {
                         title = "City"
                         sort = {this.props.sort}
                         order = {this.props.order}
+                        //sortBy = "city"
                         />
                         </th>
                         <th><SortColumn 
@@ -67,6 +63,7 @@ class WeatherList extends Component {
                         title = "Temperature (Kelvin)"
                         sort = {this.props.sort}
                         order = {this.props.order}
+                        //sortBy = "averageTemp"
                         />
                         </th>
                         <th><SortColumn 
@@ -75,6 +72,7 @@ class WeatherList extends Component {
                         title = "Pressure (hPa)"
                         sort = {this.props.sort}
                         order = {this.props.order}
+                        //sortBy = "averagePressure"
                         />
                         </th>
                         <th><SortColumn 
@@ -83,6 +81,7 @@ class WeatherList extends Component {
                         title = "Humidity (%)"
                         sort = {this.props.sort}
                         order = {this.props.order}
+                        //sortBy = "averageHumidity"
                         />
                         </th>
                     </tr>
@@ -106,6 +105,7 @@ class WeatherList extends Component {
 
 // function mapStateToProps({ weather }){
 //     return { weather };
+// }
 
 function mapStateToProps({ weather, sort_weather }){
     
@@ -113,24 +113,32 @@ function mapStateToProps({ weather, sort_weather }){
     var newWeather = weather;
     
     if (sort_weather.sort === "sort_by_city"){
-        newWeather = _.orderBy(weather, [weather.city.name], sort_weather.order);
+        newWeather = _.orderBy(weather, [weather.city], weather.order);
     }
     if (sort_weather.sort === "sort_by_temp"){
-        newWeather = _.orderBy(weather, [sort_weather.averageTemp], sort_weather.order);
+        newWeather = _.orderBy(weather, [weather.sort.averageTemp], weather.order);
     }
     if (sort_weather.sort === "sort_by_pressure"){
-        newWeather = _.orderBy(weather, [sort_weather.averagePressure], sort_weather.order);
+        newWeather = _.orderBy(weather, [weather.averagePressure], weather.order);
     }
     if (sort_weather.sort === "sort_by_humidity"){
-        newWeather = _.orderBy(weather, [sort_weather.averageHumidity], sort_weather.order);
+        newWeather = _.orderBy(weather, [weather.averageHumidity], weather.order);
     }
     
+    //this is the property path: 
+    //[""0""]
+    //[""0""].city
+    //[""0""].averageTemp
+    //[""0""].averagePressure
+    //[""0""].averageHumidity
     //the problem is..................HOW DO I GET THESE VALUES.....AAAAAA
+    
+    // maybe just figure out another way to sort at this point
     
     console.log("IN WEATHER_LIST --------------")
     console.log("the weather array: ", weather)
     console.log("sort_weather: ", sort_weather)
-    console.log("sort_weather.averageHumidity: ", [sort_weather.averageHumidity])
+    console.log("sort_weather.sortBy: ", [sort_weather.sortBy])
     console.log("sort_weather.sort: ", [sort_weather.sort])
     console.log("-----------------------------")
     

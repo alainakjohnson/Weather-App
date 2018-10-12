@@ -11,11 +11,11 @@ const invert = {
 
 class SortColumn extends Component{
 
-// this is wrong
-
-   columnSelect = (columnName) => {
+    columnSelect = (columnName) => {
+       this.setState(state => {
         var order = this.props.order === "asc" ? invert[this.props.order] : "asc" ;
         this.props.columnSort(this.props.keyword, order);
+       })
         
     console.log("IN SORT COLUMN --------------")
     console.log("order: ", this.props.order)

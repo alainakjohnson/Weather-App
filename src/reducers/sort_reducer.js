@@ -1,5 +1,5 @@
 const defaultState = {
-    sort: "sort_by_temp", // change to city once city works without crashing
+    sort: "sort_by_city",
     order: "asc"
 };
 
