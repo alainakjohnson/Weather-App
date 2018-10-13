@@ -22,9 +22,9 @@ export function fetchWeather(city){
     }
 }
 
-export function sortWeather(sort, order){
+export function sortWeather(sort, order, sortKey){
     return { 
         type: SORT_WEATHER, 
-        payload: { sort, order } 
+        payload: { sort, order, sortKey} 
     }
 }

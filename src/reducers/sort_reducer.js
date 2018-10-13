@@ -1,6 +1,7 @@
 const defaultState = {
     sort: "sort_by_city",
-    order: "asc"
+    order: "asc",
+    sortKey: "city.name"
 };
 
 export default function (state = defaultState, action){
@@ -8,7 +9,8 @@ export default function (state = defaultState, action){
         case "SORT_WEATHER":
             return {
                 sort: action.payload.sort,
-                order: action.payload.order
+                order: action.payload.order,
+                sortKey: action.payload.sortKey
             }
     }
         return defaultState;
