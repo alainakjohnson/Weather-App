@@ -1,0 +1,197 @@
+commit 743a7f6848fe455ad1841d0d4240c0930016f8df
+Author: alainakjohnson <alainakjohnson@gmail.com>
+Date:   Sat Oct 13 17:33:20 2018 +0000
+
+    finally it works
+
+commit e549fe124ee140c1d5147800f6814f80a29bf86c
+Author: alainakjohnson <alainakjohnson@gmail.com>
+Date:   Sat Oct 13 17:19:06 2018 +0000
+
+    Arrow stuck on one column
+
+commit d17fe8af356882dec90990c7aca84eb496dfd795
+Author: alainakjohnson <alainakjohnson@gmail.com>
+Date:   Sat Oct 13 16:53:17 2018 +0000
+
+    it SORTSgit add -A! but now the arrow doesnt work
+
+commit 7fae8494af99dfaccade54c83bfb66f8629ee169
+Author: alainakjohnson <alainakjohnson@gmail.com>
+Date:   Fri Oct 12 21:06:29 2018 +0000
+
+    -
+
+commit bb3ca8ba277c252d9cf2c67bbb62174c940b715e
+Author: alainakjohnson <alainakjohnson@gmail.com>
+Date:   Wed Oct 10 21:06:07 2018 +0000
+
+    minor changes, pushing to heroku just in case.
+
+commit 80afa712db41b8c5b64d5cd38a66f868f1f22cdd
+Author: alainakjohnson <alainakjohnson@gmail.com>
+Date:   Wed Oct 10 20:51:21 2018 +0000
+
+    Got back up to where I left off.
+
+commit c724fe709a1b59332f1e347df485ba75a96a3c94
+Author: alainakjohnson <alainakjohnson@gmail.com>
+Date:   Wed Oct 10 20:37:32 2018 +0000
+
+    cloud9 environment died; new environment from old commit.
+
+commit 88937f85048741d63ea3e85a7549104454713f43
+Author: alainakjohnson <akjohnson@valdosta.edu>
+Date:   Wed Oct 10 17:08:36 2018 +0000
+
+    Sort still not working, some small changes made
+
+commit cc65d1d7323fd8160c26512c85dc02230aaa9dc1
+Author: alainakjohnson <akjohnson@valdosta.edu>
+Date:   Wed Oct 10 09:06:48 2018 +0000
+
+    Runs without crashing but still doesn't sort correctly.
+
+commit d08d03463837c91f0f365a717c0876152e984360
+Author: alainakjohnson <akjohnson@valdosta.edu>
+Date:   Wed Oct 10 05:19:26 2018 +0000
+
+    Reformatted some things.
+
+commit 67f01d901b78cea0bf063f6dc87f31ec22fefaa3
+Author: alainakjohnson <akjohnson@valdosta.edu>
+Date:   Wed Oct 10 02:37:55 2018 +0000
+
+    working on connecting weather list and sort column
+
+commit fcc6af49c21fa4840c069d3d2b5b4aa486e3729d
+Author: alainakjohnson <akjohnson@valdosta.edu>
+Date:   Wed Oct 10 00:30:32 2018 +0000
+
+    completed weather reducer/averages
+
+commit 49b47091bc37ddfbbbdf4bb3d7adbadbc7d6c38e
+Author: alainakjohnson <akjohnson@valdosta.edu>
+Date:   Tue Oct 9 23:43:44 2018 +0000
+
+    working on actual sorting function
+
+commit a1410105f5afcb3921873edd85e0299ae194162f
+Author: alainakjohnson <akjohnson@valdosta.edu>
+Date:   Tue Oct 9 19:10:30 2018 +0000
+
+    forming sort column
+
+commit 8427ca425e0d5e3555ff0e3636f28b1ef8457f08
+Author: alainakjohnson <akjohnson@valdosta.edu>
+Date:   Mon Oct 8 23:19:12 2018 +0000
+
+    reducers/actions done
+
+commit 2f0e0a24f90046268beb802ade74acef293971c1
+Author: alainakjohnson <akjohnson@valdosta.edu>
+Date:   Mon Oct 8 20:54:21 2018 +0000
+
+    working through sorting reducer/actions
+
+commit 2f35f77fb2df357abdf25440b6deade63f6c4f30
+Author: alainakjohnson <akjohnson@valdosta.edu>
+Date:   Mon Oct 1 05:00:51 2018 +0000
+
+    cloned old app
+
+commit 54095b51aee52d74d0f1cb4cc22bb142ed638df9
+Author: alainakjohnson <akjohnson@valdosta.edu>
+Date:   Wed Sep 26 03:02:03 2018 +0000
+
+    ...
+
+commit c7388db4bcd4e7854e0bbbf683e145219aec772b
+Author: alainakjohnson <akjohnson@valdosta.edu>
+Date:   Wed Sep 26 03:01:20 2018 +0000
+
+    fixed devtools heroku problem
+
+commit 04596eb92bc63319e13f07f9fee48ebf155de7a9
+Author: alainakjohnson <akjohnson@valdosta.edu>
+Date:   Wed Sep 26 02:53:02 2018 +0000
+
+    getting ready for heroku
+
+commit 81c0eebe565a7d077252fee457be580a0a047c43
+Author: alainakjohnson <akjohnson@valdosta.edu>
+Date:   Wed Sep 26 02:38:44 2018 +0000
+
+    google maps implemented
+
+commit 2439d06174d28af7e1a19f9a518ac506e1b87332
+Author: alainakjohnson <akjohnson@valdosta.edu>
+Date:   Wed Sep 26 02:21:01 2018 +0000
+
+    created chart component, implemented lodash
+
+commit 9e1f84333cc86893c2889e6fa681e6688ce34268
+Author: alainakjohnson <akjohnson@valdosta.edu>
+Date:   Wed Sep 26 01:59:25 2018 +0000
+
+    charts are working
+
+commit 0150fad7fee24bf67cabcc7720fb7df48e44c8b8
+Author: alainakjohnson <akjohnson@valdosta.edu>
+Date:   Tue Sep 25 22:54:33 2018 +0000
+
+    beginning to work on chart portion
+
+commit 42d905860c5662cf71cf2709646f75bfd90d417d
+Author: alainakjohnson <akjohnson@valdosta.edu>
+Date:   Tue Sep 25 21:39:20 2018 +0000
+
+    Weather is displaying properly
+
+commit db1b11ac6f97bbacd855e5d2f0b12be63cb4143e
+Author: alainakjohnson <akjohnson@valdosta.edu>
+Date:   Tue Sep 25 21:23:10 2018 +0000
+
+    reducer added
+
+commit 812ec893c3f6f625f5bf9cb8620dcd6b42fc43f8
+Author: alainakjohnson <akjohnson@valdosta.edu>
+Date:   Tue Sep 25 20:48:14 2018 +0000
+
+    forecast data working
+
+commit de63b24cf97dfa165e11b566124d5731ca338c62
+Author: alainakjohnson <akjohnson@valdosta.edu>
+Date:   Tue Sep 25 20:10:46 2018 +0000
+
+    working on connection
+
+commit bda739e5c4e8542ed1e717fefea06540afee4bb3
+Author: alainakjohnson <akjohnson@valdosta.edu>
+Date:   Tue Sep 25 17:43:37 2018 +0000
+
+    added weather API key
+
+commit 70e29273ebba4c4ca8ede75b8b2771d9705083bc
+Author: alainakjohnson <akjohnson@valdosta.edu>
+Date:   Tue Sep 25 17:09:27 2018 +0000
+
+    completed form element
+
+commit 795f933cd65d1d6766d5accdcab8b97416673879
+Author: alainakjohnson <akjohnson@valdosta.edu>
+Date:   Tue Sep 25 16:54:01 2018 +0000
+
+    added searchbar
+
+commit 242fbddb6c897f6eee978421b9679284bdd1d1c6
+Author: alainakjohnson <akjohnson@valdosta.edu>
+Date:   Fri Sep 21 06:23:46 2018 +0000
+
+    set up folders and such
+
+commit e320b08fbe5d02c554600d8f3f9133322b55c1c6
+Author: alainakjohnson <akjohnson@valdosta.edu>
+Date:   Fri Sep 21 06:11:33 2018 +0000
+
+    created a new react app
