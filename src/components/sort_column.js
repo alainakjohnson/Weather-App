@@ -8,22 +8,17 @@ const invert = {
     desc: "asc"
 };
 
-    //   columnToSort: columnName,
-    //   sortDirection:
-    //     state.columnToSort === columnName
-    //       ? invertDirection[state.sortDirection]
-    //       : "asc"
-
-
 class SortColumn extends Component{
 
-    columnSelect = (columnName) => {
+    columnSelect = (selectedColumn) => {
        this.setState(state => {
+        selectedColumn = this.props;
         var order = this.props.order === "asc" ? invert[this.props.order] : "asc" ;
-        this.props.columnSort(this.props.sort, order, this.props.sortKey);
+        this.props.columnSort(this.props.keyword, order, this.props.sortKey);
        })
         
     console.log("IN SORT COLUMN --------------")
+    console.log("columnName: ", selectedColumn)
     console.log("order: ", this.props.order)
     console.log("sort: ", this.props.sort)
     console.log("sortKey: ", this.props.sortKey)
@@ -34,7 +29,7 @@ class SortColumn extends Component{
 
     render() {
         //need to add underline and make the arrow flip
-        return <div onClick={() => this.columnSelect(this.props)} >
+        return <div onClick={() => this.columnSelect(this.props) || console.log("keyword, sort: ", this.props.keyword, this.props.sort)} >
                     <span>{this.props.title}</span>
                     {this.props.keyword === this.props.sort ? (
                         this.props.order === "asc" 
