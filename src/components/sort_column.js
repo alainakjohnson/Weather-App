@@ -3,23 +3,30 @@
 
 import React, { Component } from 'react';
 
-
 const invert = {
     asc: "desc",
     desc: "asc"
 };
+
+    //   columnToSort: columnName,
+    //   sortDirection:
+    //     state.columnToSort === columnName
+    //       ? invertDirection[state.sortDirection]
+    //       : "asc"
+
 
 class SortColumn extends Component{
 
     columnSelect = (columnName) => {
        this.setState(state => {
         var order = this.props.order === "asc" ? invert[this.props.order] : "asc" ;
-        this.props.columnSort(this.props.keyword, order, this.props.sortKey);
+        this.props.columnSort(this.props.sort, order, this.props.sortKey);
        })
         
     console.log("IN SORT COLUMN --------------")
     console.log("order: ", this.props.order)
     console.log("sort: ", this.props.sort)
+    console.log("sortKey: ", this.props.sortKey)
     console.log("-----------------------------")
         
     };

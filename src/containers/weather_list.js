@@ -110,43 +110,18 @@ class WeatherList extends Component {
 function mapStateToProps({ weather, sort_weather }){
     
     // _.orderby(array we're sorting through, [key], order)
-    var newWeather = weather;
-    
-    if (sort_weather.sort === "sort_by_city"){
-        newWeather = _.orderBy(weather, [sort_weather.sortKey], sort_weather.order);
-    }
-    if (sort_weather.sort === "sort_by_temp"){
-        newWeather = _.orderBy(weather, [sort_weather.sortKey], sort_weather.order);
-    }
-    if (sort_weather.sort === "sort_by_pressure"){
-        newWeather = _.orderBy(weather, [sort_weather.sortKey], sort_weather.order);
-    }
-    if (sort_weather.sort === "sort_by_humidity"){
-        newWeather = _.orderBy(weather, [sort_weather.sortKey], sort_weather.order);
-    }
-    
-    //this is the property path: 
-    //[""0""]
-    //[""0""].city
-    //[""0""].averageTemp
-    //[""0""].averagePressure
-    //[""0""].averageHumidity
-    //the problem is..................HOW DO I GET THESE VALUES.....AAAAAA
-    
-    // maybe just figure out another way to sort at this point
+    var newWeather = _.orderBy(weather, [sort_weather.sortKey], sort_weather.order);
+
     
     console.log("IN WEATHER_LIST --------------")
     console.log("the weather array: ", weather)
     console.log("sort_weather: ", sort_weather)
-    console.log("sort_weather.sort: ", [sort_weather.sort])
     console.log("weather.sort: ", [weather.sort])
     console.log("sort_weather.order: ", sort_weather.order)
-    console.log("[weather].sortKey: ", [sort_weather].sortKey)
     console.log("[weather.sortKey]: ", [sort_weather.sortKey])
-    console.log("weather.sortKey: ", sort_weather.sortKey)
     console.log("-----------------------------")
     
-    return{ weather: newWeather };
+    return{ weather: newWeather, sort: sort_weather.sort, order: sort_weather.order, sortKey: sort_weather.sortKey };
 }
 
 function mapDispatchtoProps(dispatch){
