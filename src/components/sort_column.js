@@ -8,10 +8,9 @@ const invert = {
 class SortColumn extends Component{
 
     columnSelect = (selectedColumn) => {
+        selectedColumn = this.props;
         this.setState(state => {
-            //this.props.title: { this.props.title } ? <u>{ this.props.title }</u> : { this.props.title }
-            selectedColumn = this.props;
-            var order = this.props.order === "asc" ? invert[this.props.order] : "asc" ;
+            var order = this.props.order ? invert[this.props.order] : "asc" ;
             this.props.columnSort(this.props.keyword, order, this.props.sortKey);
             });
 
@@ -27,7 +26,7 @@ class SortColumn extends Component{
 
     render() {
         return <div onClick={() => this.columnSelect(this.props)} >
-                    <span>{this.props.title}</span>
+                    {this.props.title}
                     {this.props.keyword === this.props.sort ? (
                         this.props.order === "asc" 
                             ? (<span className="oi oi-chevron-top" aria-hidden="true" />)

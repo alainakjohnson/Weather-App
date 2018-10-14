@@ -1,3 +1,51 @@
+commit 743a7f6848fe455ad1841d0d4240c0930016f8df
+Author: alainakjohnson <alainakjohnson@gmail.com>
+Date:   Sat Oct 13 17:33:20 2018 +0000
+
+    finally it works
+
+commit e549fe124ee140c1d5147800f6814f80a29bf86c
+Author: alainakjohnson <alainakjohnson@gmail.com>
+Date:   Sat Oct 13 17:19:06 2018 +0000
+
+    Arrow stuck on one column
+
+commit d17fe8af356882dec90990c7aca84eb496dfd795
+Author: alainakjohnson <alainakjohnson@gmail.com>
+Date:   Sat Oct 13 16:53:17 2018 +0000
+
+    it SORTSgit add -A! but now the arrow doesnt work
+
+commit 7fae8494af99dfaccade54c83bfb66f8629ee169
+Author: alainakjohnson <alainakjohnson@gmail.com>
+Date:   Fri Oct 12 21:06:29 2018 +0000
+
+    -
+
+commit bb3ca8ba277c252d9cf2c67bbb62174c940b715e
+Author: alainakjohnson <alainakjohnson@gmail.com>
+Date:   Wed Oct 10 21:06:07 2018 +0000
+
+    minor changes, pushing to heroku just in case.
+
+commit 80afa712db41b8c5b64d5cd38a66f868f1f22cdd
+Author: alainakjohnson <alainakjohnson@gmail.com>
+Date:   Wed Oct 10 20:51:21 2018 +0000
+
+    Got back up to where I left off.
+
+commit c724fe709a1b59332f1e347df485ba75a96a3c94
+Author: alainakjohnson <alainakjohnson@gmail.com>
+Date:   Wed Oct 10 20:37:32 2018 +0000
+
+    cloud9 environment died; new environment from old commit.
+
+commit 88937f85048741d63ea3e85a7549104454713f43
+Author: alainakjohnson <akjohnson@valdosta.edu>
+Date:   Wed Oct 10 17:08:36 2018 +0000
+
+    Sort still not working, some small changes made
+
 commit cc65d1d7323fd8160c26512c85dc02230aaa9dc1
 Author: alainakjohnson <akjohnson@valdosta.edu>
 Date:   Wed Oct 10 09:06:48 2018 +0000

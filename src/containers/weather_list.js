@@ -34,11 +34,6 @@ class WeatherList extends Component {
                     )
                 }
                 
-                
-// errors: 
-// - not actually sorting. possibly the sorting is in the wrong place
-// - need to sort by the average values. so prob needs to hit that reducer
-
  columnSort = (sort, order, sortKey) => {
         this.props.sortWeather(sort, order, sortKey);
     }
@@ -103,16 +98,11 @@ class WeatherList extends Component {
     // }
     // note: this is prob important
 
-// function mapStateToProps({ weather }){
-//     return { weather };
-// }
-
 function mapStateToProps({ weather, sort_weather }){
     
     // _.orderby(array we're sorting through, [key], order)
     var newWeather = _.orderBy(weather, [sort_weather.sortKey], sort_weather.order);
 
-    
     console.log("IN WEATHER_LIST --------------")
     console.log("the weather array: ", weather)
     console.log("sort_weather: ", sort_weather)
